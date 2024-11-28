@@ -87,3 +87,47 @@
 
 # Part 2 GitHub Actions and Dockerhub
 
+## 1. Configuring GitHub Secrets
+
+### How to Set a Secret for GitHub Actions
+1. Go to your GitHub repository.
+2. Navigate to **Settings** → **Secrets and variables** → **Actions**.
+3. Click **New repository secret**.
+4. Enter the **Name** of the secret and its **Value**.
+   - For example, `DOCKER_USERNAME` for your DockerHub username.
+5. Save the secret by clicking **Add secret**.
+
+### Secrets Set for This Project
+- **DOCKER_USERNAME**: The DockerHub username associated with the account.
+- **DOCKER_TOKEN**: The DockerHub Access Token with Read/Write permissions.
+
+
+---
+
+## 2. Behavior of the GitHub Workflow
+
+### Summary of Workflow Behavior
+- The GitHub Actions workflow automatically builds and pushes the Docker image to DockerHub whenever changes are pushed to the `main` branch.
+- Workflow steps:
+  1. **Check Out the Code**: Fetches the repository's latest code.
+  2. **Log in to DockerHub**: Authenticates using GitHub Secrets (`DOCKER_USERNAME` and `DOCKER_TOKEN`).
+  3. **Build Docker Image**: Builds the image using the `Dockerfile` in the repository.
+  4. **Push Docker Image**: Tags and pushes the Docker image to the specified DockerHub repository.
+
+
+## 3. Duplicating the Workflow for Your Project
+
+### Summary of Changes Needed
+To adapt this workflow for a new project, you’ll need to:
+1. **Update DockerHub Secrets**:
+   - Set your `DOCKER_USERNAME` and `DOCKER_TOKEN` secrets in the target repository.
+2. **Modify the Workflow File**:
+   - Update the image name in the `docker build` and `docker push` steps:
+     ```yaml
+     docker build -t <your-dockerhub-username>/<your-image-name>:latest .
+     docker push <your-dockerhub-username>/<your-image-name>:latest
+     ```
+3. **Repository Changes**:
+   - Include a valid `Dockerfile` at the root of your repository.
+   - Ensure the necessary dependencies for your application are installed within the Dockerfile.
+
