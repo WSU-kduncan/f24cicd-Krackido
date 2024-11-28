@@ -101,32 +101,24 @@
 - **DOCKER_USERNAME**: The DockerHub username associated with the account.
 - **DOCKER_TOKEN**: The DockerHub Access Token with Read/Write permissions.
 
-
----
-
 ## 2. Behavior of the GitHub Workflow
 
 ### Summary of Workflow Behavior
-- The GitHub Actions workflow automatically builds and pushes the Docker image to DockerHub whenever changes are pushed to the `main` branch.
-- Workflow steps:
-  1. **Check Out the Code**: Fetches the repository's latest code.
-  2. **Log in to DockerHub**: Authenticates using GitHub Secrets (`DOCKER_USERNAME` and `DOCKER_TOKEN`).
-  3. **Build Docker Image**: Builds the image using the `Dockerfile` in the repository.
-  4. **Push Docker Image**: Tags and pushes the Docker image to the specified DockerHub repository.
+The workflow automatically builds and pushes a Docker image to DockerHub whenever changes are pushed to the `main` branch. The steps in the workflow are:
+1. **Check Out the Code**: Fetches the repository's latest code.
+2. **Set Up QEMU**: Prepares the environment for multi-platform builds.
+3. **Set Up Buildx**: Configures Docker Buildx for advanced image building.
+4. **Login to DockerHub**: Authenticates with DockerHub using secrets.
+5. **Build and Push Docker Image**: Builds the Docker image using the `Dockerfile` and pushes it to DockerHub.
 
 
 ## 3. Duplicating the Workflow for Your Project
 
 ### Summary of Changes Needed
-To adapt this workflow for a new project, you’ll need to:
 1. **Update DockerHub Secrets**:
    - Set your `DOCKER_USERNAME` and `DOCKER_TOKEN` secrets in the target repository.
 2. **Modify the Workflow File**:
-   - Update the image name in the `docker build` and `docker push` steps:
-     ```yaml
-     docker build -t <your-dockerhub-username>/<your-image-name>:latest .
-     docker push <your-dockerhub-username>/<your-image-name>:latest
-     ```
+   - Update the tags to point to your directory.
 3. **Repository Changes**:
    - Include a valid `Dockerfile` at the root of your repository.
    - Ensure the necessary dependencies for your application are installed within the Dockerfile.
