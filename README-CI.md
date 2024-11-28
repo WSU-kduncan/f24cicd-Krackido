@@ -110,8 +110,7 @@ The workflow automatically builds and pushes a Docker image to DockerHub wheneve
 3. **Set Up Buildx**: Configures Docker Buildx for advanced image building.
 4. **Login to DockerHub**: Authenticates with DockerHub using secrets.
 5. **Build and Push Docker Image**: Builds the Docker image using the `Dockerfile` and pushes it to DockerHub.
-
-[Workflow File](https://github.com/WSU-kduncan/f24cicd-Krackido/blob/main/.github/workflows/dockerflow.yml "File Here")
+[Workflow File](https://github.com/WSU-kduncan/f24cicd-Krackido/blob/main/.github/workflows/dockerflow.yml)
 
 
 ## 3. Duplicating the Workflow for Your Project
