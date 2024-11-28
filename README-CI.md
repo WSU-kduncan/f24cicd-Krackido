@@ -103,13 +103,15 @@
 
 ## 2. Behavior of the GitHub Workflow
 
-### Summary of Workflow Behavior
+### Summary of what workflow does
 The workflow automatically builds and pushes a Docker image to DockerHub whenever changes are pushed to the `main` branch. The steps in the workflow are:
 1. **Check Out the Code**: Fetches the repository's latest code.
 2. **Set Up QEMU**: Prepares the environment for multi-platform builds.
 3. **Set Up Buildx**: Configures Docker Buildx for advanced image building.
 4. **Login to DockerHub**: Authenticates with DockerHub using secrets.
 5. **Build and Push Docker Image**: Builds the Docker image using the `Dockerfile` and pushes it to DockerHub.
+
+[Workflow File](https://github.com/WSU-kduncan/f24cicd-Krackido/blob/main/.github/workflows/dockerflow.yml "File Here")
 
 
 ## 3. Duplicating the Workflow for Your Project
