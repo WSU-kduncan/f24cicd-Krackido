@@ -1,6 +1,10 @@
 
 # Part 1 Docker-ize it
 
+This project focuses on building a Continous Integration for containerizing and deploying a Angular Application. This process uses tools such as Docker, Github Actions and DockerHub to make a streamline development and deployment workflow.
+
+[](/Images/diagramp4.png)
+
 ## 1. Installing Docker and Dependencies on Windows
 
 1. Download the Docker Desktop installer from the Docker website.
