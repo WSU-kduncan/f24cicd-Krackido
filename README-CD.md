@@ -28,3 +28,4 @@ The workflow is triggered whenever a new git tag is pushed to the repository tha
 4. Login to DockerHub: Authenticates with DockerHub using stored secrets (DOCKERHUB_USERNAME and DOCKERHUB_TOKEN).
 5. Generate Image Tags: Extracts semantic version tags (e.g., latest, major, major.minor) from the git tag.
 6. Build and Push Docker Image: Builds the Docker image from the repository's Dockerfile and pushes it to DockerHub with all generated tags.
+7. Link to Dockerhub Repo: https://hub.docker.com/repository/docker/patel513/app/general
