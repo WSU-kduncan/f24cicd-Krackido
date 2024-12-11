@@ -29,3 +29,14 @@ The workflow is triggered whenever a new git tag is pushed to the repository tha
 5. Generate Image Tags: Extracts semantic version tags (e.g., latest, major, major.minor) from the git tag.
 6. Build and Push Docker Image: Builds the Docker image from the repository's Dockerfile and pushes it to DockerHub with all generated tags.
 7. Link to Dockerhub Repo: https://hub.docker.com/repository/docker/patel513/app/general
+
+### Instance information
+1. Public IP: 34.233.82.151
+2. OS : Ubuntu 24.04.1
+
+### How to install docker
+1. `sudo apt update`
+2. `sudo apt-get install docker.io`
+3. `sudo systemctl start docker`
+
+
