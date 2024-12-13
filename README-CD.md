@@ -87,7 +87,7 @@ The workflow is triggered whenever a new Git tag following the `v*.*.*` pattern 
      ```bash
      sudo apt-get install webhook
      ```
-- Installion instruction and webhook from [Source]https://github.com/adnanh/webhook
+- Installion instruction and webhook from [Source](https://github.com/adnanh/webhook)
 
 ---
 
