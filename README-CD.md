@@ -2,6 +2,8 @@
 
 Develop and deploy a CI/CD pipeline integrating semantic versioning, GitHub Actions, DockerHub, and webhooks to automate containerized application deployments on an EC2 instance.
 
+![Diagram](/Images/cd-diagram.png)
+
 ---
 
 ## **Tools Used**
