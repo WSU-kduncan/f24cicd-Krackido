@@ -52,6 +52,7 @@ The workflow is triggered whenever a new Git tag following the `v*.*.*` pattern 
    ```bash
    sudo apt-get install docker.io
    ```
+   - Obtained from: [Source](https://askubuntu.com/questions/938700/how-do-i-install-docker-on-ubuntu-16-04-lts)
 3. Start Docker:
    ```bash
    sudo systemctl start docker
@@ -69,6 +70,7 @@ The workflow is triggered whenever a new Git tag following the `v*.*.*` pattern 
 2. **Location**: `/home/ubuntu/refresh.sh`
 
 3. **Link to Script**: [refresh.sh](https://github.com/WSU-kduncan/f24cicd-Krackido/blob/main/deployment/refresh.sh)
+   - Credit for script to professor Duncan class 12/02/24
 
 ---
 
@@ -85,6 +87,7 @@ The workflow is triggered whenever a new Git tag following the `v*.*.*` pattern 
      ```bash
      sudo apt-get install webhook
      ```
+- Installion instruction and webhook from [Source]https://github.com/adnanh/webhook
 
 ---
 
@@ -104,6 +107,7 @@ The workflow is triggered whenever a new Git tag following the `v*.*.*` pattern 
      ```
 
 2. **Link to Webhook File**: [hooks.json](https://github.com/WSU-kduncan/f24cicd-Krackido/blob/main/deployment/hooks.json)
+   - Credit for hook file to professor Duncan class 12/04/24
 
 ---
 
@@ -180,4 +184,5 @@ The workflow is triggered whenever a new Git tag following the `v*.*.*` pattern 
    ```
 
 4. **Link to Webhook Service File**: [webhook.service](https://github.com/WSU-kduncan/f24cicd-Krackido/blob/main/deployment/webhook.service)
+   - Credit for file changes to professor Duncan class 12/04/24
 
