@@ -14,7 +14,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/app
+            ${{ secrets.DOCKERHUB_USERNAME }}/patel-ceg3120
           tags: |
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
@@ -39,6 +39,6 @@ jobs:
         with:
           context: .
           push: true
-          #tags: ${{ secrets.DOCKERHUB_USERNAME }}/app:latest
+          #tags: ${{ secrets.DOCKERHUB_USERNAME }}/patel-ceg3120:latest
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
