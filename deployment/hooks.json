@@ -1,7 +1,27 @@
-[
+},
+{
+  "id": "reel",
+  "execute-command": "/home/ubuntu/refresh.sh",
+  "pass-arguments-to-command": [
     {
-      "id": "project-webhook",
-      "execute-command": "/home/ubuntu/refresh.sh",
-      "command-working-directory": "/home/ubuntu"
+      "source": "entire-payload"
     }
-  ]
+  ],
+  "trigger-rule": {
+    "and": [
+      {
+        "match": {
+          "type": "value",
+          "value": "latest",
+          "parameter": {
+            "source": "payload",
+            "name": "push_data.tag"
+          }
+        }
+      }
+    ]
+  },
+  "verbose": true
+
+}
+]
