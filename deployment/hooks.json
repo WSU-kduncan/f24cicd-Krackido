@@ -1,27 +1,33 @@
-},
-{
-  "id": "reel",
-  "execute-command": "/home/ubuntu/refresh.sh",
-  "pass-arguments-to-command": [
-    {
-      "source": "entire-payload"
-    }
-  ],
-  "trigger-rule": {
-    "and": [
+[
+  {
+    "id": "project-webhook",
+    "execute-command": "/home/ubuntu/refresh.sh",
+    "command-working-directory": "/home/ubuntu",
+    "pass-arguments-to-command": [],
+    "verbose": true
+  },
+  {
+    "id": "reel",
+    "execute-command": "/home/ubuntu/refresh.sh",
+    "pass-arguments-to-command": [
       {
-        "match": {
-          "type": "value",
-          "value": "latest",
-          "parameter": {
-            "source": "payload",
-            "name": "push_data.tag"
+        "source": "entire-payload"
+      }
+    ],
+    "trigger-rule": {
+      "and": [
+        {
+          "match": {
+            "type": "value",
+            "value": "latest",
+            "parameter": {
+              "source": "payload",
+              "name": "push_data.tag"
+            }
           }
         }
-      }
-    ]
-  },
-  "verbose": true
-
-}
+      ]
+    },
+    "verbose": true
+  }
 ]
