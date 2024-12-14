@@ -188,3 +188,10 @@ The workflow is triggered whenever a new Git tag following the `v*.*.*` pattern 
 4. **Link to Webhook Service File**: [webhook.service](https://github.com/WSU-kduncan/f24cicd-Krackido/blob/main/deployment/webhook.service)
    - Credit for file changes to professor Duncan class 12/04/24
 
+### What went wrong/troubleshooting
+1. The angular site version on dockerhub and the angular site that was being pushed to the github repo was not functional. Therefore, whenever I would edit the angular site to test the webhook the hook would run and trigger the script but the container would not run because the image that would be pulled from dockerhub was the wrong version.
+
+2. To troubleshoot I looked through Github commits and dockerhub image tags tried to figure out where it went wrong. I found the working image and pushed it to dockerhub with the latest tag in the same repository. But everytime the script ran it would pull from dockerhub and the image was still the faulty one.
+
+3. Other than that in the video I tried my best to show that the webhook and script were functional when a push was done in github. The website would not update but the container would attempt to run over and over again. 
+
